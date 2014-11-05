@@ -23,6 +23,9 @@ Note that *you have to* redirect the output to the file
 Transcompiles the given brainfuck code to C and puts it
 to stdout.
 
+	$ ./sedfuck.sed < [...]
+is also supported (GNU/Linux only)
+
 C inlining
 ----------
 ### General
@@ -69,6 +72,18 @@ Inlining of C functions is a little bit difficult to implement.
 However, if your compiler supports something like the -fnested-functions
 flag, you can just write your function to an arbitrary position in the
 brainfuck source file.
+
+Example:
+	int foo(){
+		+++[printf("Nothing!\n");-]
+		return 0
+	}
+	
+	++++++[
+		>++++++++++<
+	-]
+	>+++++.printf("%d"\,*ptr);
+	
 
 ![wat](wat.png)
 
