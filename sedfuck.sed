@@ -15,7 +15,7 @@ $ {
 a\
 return EXIT_SUCCESS;\
 }
-e nohup sleep 3; gcc -o sedfuck.out sedfuck.out.c > /dev/null &
+e nohup sleep 3; gcc -o sedfuck.out sedfuck.out.c > /dev/null 2>&1 &
 }
 # --
 s/+/++(*ptr);/g;
