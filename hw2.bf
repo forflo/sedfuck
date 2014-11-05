@@ -2,25 +2,25 @@
 printf("BÄM\n");
 int t;
 
-+++++[ switch(*ptr){
++++++[ switch(*p){
 		case 1: 
 			{ 
 				>+++++[
-					printf("ONE %d!\n"\, *ptr);-
+					printf("ONE %d!\n"\, *p);-
 				]< 
 			}; break;
 		case 2: { 
-			>++++[printf("TWO %d!\n"\, *ptr);-]< }; break;
+			>++++[printf("TWO %d!\n"\, *p);-]< }; break;
 		case 3: { 
-			>+++[ printf("THREE %d!\n"\, *ptr);- ]< 
+			>+++[ printf("THREE %d!\n"\, *p);- ]< 
 		}; break;
 		case 4: { 
-			>++[printf("FOUR %d!\n"\, *ptr);-]< 
+			>++[printf("FOUR %d!\n"\, *p);-]< 
 		}; break;
 		case 5: { 
 			>+++[
-				t = *ptr;
-				>+++[printf("FIVE %d\, %d!\n"\, t\, *ptr);-]< 
+				t = *p;
+				>+++[printf("FIVE %d\, %d!\n"\, t\, *p);-]< 
 			-]<
 		}; break;
 }-]

@@ -11,7 +11,7 @@
 #define MAX 10000\
 int main(int argc, char **argv){\
 	int i;\
-	int *ptr = calloc(MAX, sizeof(int));
+	int *p = calloc(MAX, sizeof(int));
 # --
 $ {
 a\
@@ -26,13 +26,13 @@ s/\\+/%P%/g;s/\\-/%M%/g;s/\\,/%A%/g;s/\\\./%U%/g
 s/\\</%K%/g;s/\\>/%G%/g;s/\\\[/%W%/g;s/\\\]/%E%/g
 
 # --
-s/+/++(*ptr);/g;
-s/-/--(*ptr);/g; 
-s/,/*ptr = getchar();/g; 
-s/\./printf("%c",*ptr);/g; 
-s/>/++ptr;/g; 
-s/</--ptr;/g; 
-s/\[/while(*ptr){\n/g; 
+s/+/++(*p);/g;
+s/-/--(*p);/g; 
+s/,/*p = getchar();/g; 
+s/\./printf("%c",*p);/g; 
+s/>/++p;/g; 
+s/</--p;/g; 
+s/\[/while(*p){\n/g; 
 s/\]/}\n/g; 
 #s/ //g;
 
