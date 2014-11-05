@@ -28,3 +28,4 @@ Special features
 This C->Brainfuck "compiler" provides you with the
 possibility to inline arbitrary C-Code.
 
+![wat](wat.png)
