@@ -11,20 +11,19 @@ installed on the host platform.
 
 Usage
 -----
-
+The command
 	$ sed -n -f sedfuck.sed < <infile>.bf > sedfuck.out.c
-Compiles the given brainfuck code to C code and uses
+compiles the given brainfuck code to C code and uses
 the C compiler to produce a runnable objectfile called sedfuck.out.
 
 Note that *you have to* redirect the output to the file
 "sedfuck.out.c".
 
+You can also omit the redirection at the end.
 	$ sed -n -f sedfuck.sed < <infile>.bf
-Transcompiles the given brainfuck code to C and puts it
-to stdout.
 
+Calling sedfuck directly is also supported (GNU/Linux only):
 	$ ./sedfuck.sed < [...]
-is also supported (GNU/Linux only)
 
 C inlining
 ----------
@@ -40,11 +39,11 @@ C code will finally be possible.
 	
 Will produce
 
-	PONIS!!+-[]
-	PONIS!!+-[]
-	PONIS!!+-[]
-	PONIS!!+-[]
-	PONIS!!+-[]
+	PENUS!!+-[]
+	PENUS!!+-[]
+	PENUS!!+-[]
+	PENUS!!+-[]
+	PENUS!!+-[]
 	
 #### More complex example:
 
@@ -77,11 +76,11 @@ Will produce
 
 Output:
 
-	PONIS!!+-[]
-	PONIS!!+-[]
-	PONIS!!+-[]
-	PONIS!!+-[]
-	PONIS!!+-[]
+	PENUS!!+-[]
+	PENUS!!+-[]
+	PENUS!!+-[]
+	PENUS!!+-[]
+	PENUS!!+-[]
 	BÄM
 	FIVE 3, 3!
 	FIVE 3, 2!
