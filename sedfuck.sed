@@ -1,6 +1,7 @@
 #!/usr/bin/sed -n -f
 ##
-# Summary: "Compiles" a given brainfuck script to 
+# Summary: "Compiles" a given brainfuck script to
+# License: GPLv2
 # a runnable binary file.
 # Author: Florian Mayer
 ##
