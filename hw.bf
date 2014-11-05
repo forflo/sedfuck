@@ -1,7 +1,15 @@
  ++++++++++
  [
   >+++++++>++++++++++>+++>+<<<<-
-printf("PENUS!!\n");
+printf("PENUS!!\+\n");
+printf("PENUS!!\.\n");
+printf("PENUS!!\*\n");
+printf("PENUS!!\-\n");
+printf("PENUS!!\[\n");
+printf("PENUS!!\]\n");
+printf("PENUS!!\>\n");
+printf("PENUS!!\<\n");
+printf("PENUS!!\*\.\+\-\>\<\[\]\n");
  ]
  >++.                  
  >+.                    
