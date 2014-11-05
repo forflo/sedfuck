@@ -1,10 +1,10 @@
 Sedfuck
 =======
 
-This little sed script "compiles" a given
+This little sed script translates a given
 brainfuck file to a runnable binary
 
-Mandatory tools
+Dependencies
 ---------------
 Just GNU Sed and the GNU C compiler need to be
 installed on the host platform.
@@ -87,6 +87,8 @@ Example:
 	
 
 ![wat](wat.png)
+![wat](img/wat1.gif)
+![wat](img/wat2.gif)
 
 TODO
 ----
