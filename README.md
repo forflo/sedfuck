@@ -57,5 +57,16 @@ write something like this
 
 	+++[ printf("WUT?"); ptr\[*ptr\] = 65;-]
 	>>>.<.<.
+	
+=>
+	WUT?
+	WUT?
+	WUT?
+	AAA
+
 
 ![wat](wat.png)
+
+TODO
+----
+Inclusion of user defined header files
