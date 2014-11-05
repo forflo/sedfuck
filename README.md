@@ -28,8 +28,6 @@ Special features
 This C->Brainfuck "compiler" provides you with the
 possibility to inline arbitrary C-Code. 
 
-Ugly? No, very beautiful!
-
 With sedfuck, the following longly awaited extremely productive
 C code will finally be possible.
 
