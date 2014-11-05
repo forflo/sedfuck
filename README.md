@@ -57,8 +57,8 @@ write something like this
 
 	+++[ printf("WUT?"); ptr\[*ptr\] = 65;-]
 	>>>.<.<.
-	
-=>
+
+	=>
 	WUT?
 	WUT?
 	WUT?
