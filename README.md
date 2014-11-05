@@ -64,6 +64,11 @@ write something like this
 	WUT?
 	AAA
 
+### C Funktions
+Inlining of C functions is a little bit difficult to implement.
+However, if your compiler supports something like the -fnested-functions
+flag, you can just write your function to an arbitrary position in the
+brainfuck source file.
 
 ![wat](wat.png)
 
