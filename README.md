@@ -26,6 +26,24 @@ to stdout.
 Special features
 ----------------
 This C->Brainfuck "compiler" provides you with the
-possibility to inline arbitrary C-Code.
+possibility to inline arbitrary C-Code. 
+
+Ugly? No, very beautiful!
+
+With sedfuck, the following longly awaited extremely productive
+C code will finally be possible.
+
+	+++++[ printf("PONIS!!\+\-\[\]\n"); - ]
+	
+Will produce
+
+	PONIS!!+-[]
+	PONIS!!+-[]
+	PONIS!!+-[]
+	PONIS!!+-[]
+	PONIS!!+-[]
+	
+As you can see, sedfuck handles the processing of brainfuck symbols properly. You only have
+to prefix them with the "\" char. That's it.
 
 ![wat](wat.png)
