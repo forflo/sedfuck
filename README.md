@@ -86,8 +86,6 @@ Example:
 	>+++++.printf("%d"\,*ptr);
 	
 
-![wat](wat.png)
-![wat](img/wat1.gif)
 ![wat](img/wat2.gif)
 
 TODO
