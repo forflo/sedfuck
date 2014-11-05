@@ -22,3 +22,9 @@ Note that *you have to* redirect the output to the file
 	$ sed -n -f sedfuck.sed < <infile>.bf
 Transcompiles the given brainfuck code to C and puts it
 to stdout.
+
+Special features
+----------------
+This C->Brainfuck "compiler" provides you with the
+possibility to inline arbitrary C-Code.
+
