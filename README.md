@@ -74,6 +74,7 @@ flag, you can just write your function to an arbitrary position in the
 brainfuck source file.
 
 Example:
+	
 	int foo(){
 		+++[printf("Nothing!\n");-]
 		return 0
