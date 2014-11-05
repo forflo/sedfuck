@@ -1,6 +1,6 @@
 ##
-# Summary: "Compiles" a given sed script to 
-# compilable C-Code
+# Summary: "Compiles" a given brainfuck script to 
+# a runnable binary file.
 # Author: Florian Mayer
 ##
 1 i\
