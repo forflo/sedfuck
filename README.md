@@ -145,6 +145,7 @@ Example:
 		>++++++++++<
 	-]
 	>+++++.printf("%d"\,*ptr);
+	foo();
 	
 
 ![wat](img/wat2.gif)
