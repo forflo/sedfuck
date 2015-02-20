@@ -2,7 +2,7 @@ Sedfuck
 =======
 
 This little sed script translates a given
-brainfuck file to a runnable binary
+brainfuck file into a runnable binary.
 
 Dependencies
 ---------------
@@ -11,9 +11,10 @@ installed on the host platform.
 
 Usage
 -----
-Just execute a command like the following
+If you downloaded the repository and changed into it, 
+write some nice brainfuck code and execute the following command:
 	
-	$ sed -n -f sedfuck.sed < somecode.bf > sedfuck.out.c
+	$ sed -n -f sedfuck.sed < nicefuck.bf > sedfuck.out.c
 
 This will compile the given brainfuck code to C code and uses
 the C compiler to produce a runnable objectfile called sedfuck.out!
@@ -40,7 +41,7 @@ C code will finally be possible.
 
 	+++++[ printf("PENUS!!\+\-\[\]\n"); - ]
 	
-Will produce
+It'll produce
 
 	PENUS!!+-[]
 	PENUS!!+-[]
@@ -119,7 +120,7 @@ The brainfuck pointer can be accessed as follows
 
 	+++[ printf("WATMAN?! #%d\n"\, *ptr); ]
 
-Since the dynamic array ptr is accessible everywhere you could also
+Since the dynamic array "ptr" is accessible everywhere you could also
 write something like this
 
 	+++[ printf("WUT?"); ptr\[*ptr\] = 65;-]
@@ -150,9 +151,10 @@ Example:
 	>+++++.printf("%d"\,*ptr);
 	foo();
 	
-
+Conclusion
+==========
 ![wat](img/wat2.gif)
 
 TODO
-----
+====
 Inclusion of user defined header files
