@@ -11,15 +11,18 @@ installed on the host platform.
 
 Usage
 -----
-The command
-	$ sed -n -f sedfuck.sed < <infile>.bf > sedfuck.out.c
-compiles the given brainfuck code to C code and uses
-the C compiler to produce a runnable objectfile called sedfuck.out.
+Just execute a command like the following
+	
+	$ sed -n -f sedfuck.sed < somecode.bf > sedfuck.out.c
+
+This will compile the given brainfuck code to C code and uses
+the C compiler to produce a runnable objectfile called sedfuck.out!
 
 Note that *you have to* redirect the output to the file
 "sedfuck.out.c".
 
 You can also omit the redirection at the end.
+
 	$ sed -n -f sedfuck.sed < <infile>.bf
 
 Calling sedfuck directly is also supported (GNU/Linux only):
