@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Sedfuck : A sed brainfuck transcompiler!!1!">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Sedfuck</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/forflo/sedfuck">View on GitHub</a>
+
+          <h1 id="project_title">Sedfuck</h1>
+          <h2 id="project_tagline">A sed brainfuck transcompiler!!1!</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/forflo/sedfuck/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/forflo/sedfuck/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="sedfuck" class="anchor" href="#sedfuck" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sedfuck</h1>
+
+<p>This little sed script translates a given
+brainfuck file to a runnable binary</p>
+
+<h2>
+<a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dependencies</h2>
+
+<p>Just GNU Sed and the GNU C compiler need to be
+installed on the host platform.</p>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>Just execute a command like the following</p>
+
+<pre><code>$ sed -n -f sedfuck.sed &lt; somecode.bf &gt; sedfuck.out.c
+</code></pre>
+
+<p>This will compile the given brainfuck code to C code and uses
+the C compiler to produce a runnable objectfile called sedfuck.out!</p>
+
+<p>Note that <em>you have to</em> redirect the output to the file
+"sedfuck.out.c".</p>
+
+<p>You can also omit the redirection at the end.</p>
+
+<pre><code>$ sed -n -f sedfuck.sed &lt; &lt;infile&gt;.bf
+</code></pre>
+
+<p>Calling sedfuck directly is also supported (GNU/Linux only):
+    $ ./sedfuck.sed &lt; [...]</p>
+
+<h2>
+<a id="c-inlining" class="anchor" href="#c-inlining" aria-hidden="true"><span class="octicon octicon-link"></span></a>C inlining</h2>
+
+<h3>
+<a id="general" class="anchor" href="#general" aria-hidden="true"><span class="octicon octicon-link"></span></a>General</h3>
+
+<p>This C-&gt;Brainfuck "compiler" provides you with the
+possibility to inline arbitrary C-Code. </p>
+
+<h4>
+<a id="simple-example" class="anchor" href="#simple-example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Simple example</h4>
+
+<p>With sedfuck, the following longly awaited extremely productive
+C code will finally be possible.</p>
+
+<pre><code>+++++[ printf("PENUS!!\+\-\[\]\n"); - ]
+</code></pre>
+
+<p>Will produce</p>
+
+<pre><code>PENUS!!+-[]
+PENUS!!+-[]
+PENUS!!+-[]
+PENUS!!+-[]
+PENUS!!+-[]
+</code></pre>
+
+<h4>
+<a id="more-complex-example" class="anchor" href="#more-complex-example" aria-hidden="true"><span class="octicon octicon-link"></span></a>More complex example:</h4>
+
+<pre><code>+++++[ printf("PENUS!!\+\-\[\]\n");- ]
+printf("BAM\n");
+int t;
+
++++++[ switch(*ptr){
+        case 1: 
+            { 
+                &gt;+++++[
+                    printf("ONE %d!\n"\, *ptr);-
+                ]&lt; 
+            }; break;
+        case 2: { 
+            &gt;++++[printf("TWO %d!\n"\, *ptr);-]&lt; }; break;
+        case 3: { 
+            &gt;+++[ printf("THREE %d!\n"\, *ptr);- ]&lt; 
+        }; break;
+        case 4: { 
+            &gt;++[printf("FOUR %d!\n"\, *ptr);-]&lt; 
+        }; break;
+        case 5: { 
+            &gt;+++[
+                t = *ptr;
+                &gt;+++[printf("FIVE %d\, %d!\n"\, t\, *ptr);-]&lt; 
+            -]&lt;
+        }; break;
+}-]
+</code></pre>
+
+<p>Output:</p>
+
+<pre><code>PENUS!!+-[]
+PENUS!!+-[]
+PENUS!!+-[]
+PENUS!!+-[]
+PENUS!!+-[]
+BÄM
+FIVE 3, 3!
+FIVE 3, 2!
+FIVE 3, 1!
+FIVE 2, 3!
+FIVE 2, 2!
+FIVE 2, 1!
+FIVE 1, 3!
+FIVE 1, 2!
+FIVE 1, 1!
+FOUR 2!
+FOUR 1!
+THREE 3!
+THREE 2!
+THREE 1!
+TWO 4!
+TWO 3!
+TWO 2!
+TWO 1!
+ONE 5!
+ONE 4!
+ONE 3!
+ONE 2!
+ONE 1!
+</code></pre>
+
+<h3>
+<a id="escaping-of-brainfuck-symbols" class="anchor" href="#escaping-of-brainfuck-symbols" aria-hidden="true"><span class="octicon octicon-link"></span></a>Escaping of brainfuck symbols</h3>
+
+<p>As you can see, sedfuck handles the processing of brainfuck symbols properly. You only have
+to prefix them with the "\" char. That's it.</p>
+
+<h3>
+<a id="accessing-the-brainfuck-pointer" class="anchor" href="#accessing-the-brainfuck-pointer" aria-hidden="true"><span class="octicon octicon-link"></span></a>Accessing the brainfuck pointer</h3>
+
+<p>The brainfuck pointer can be accessed as follows</p>
+
+<pre><code>+++[ printf("WATMAN?! #%d\n"\, *ptr); ]
+</code></pre>
+
+<p>Since the dynamic array ptr is accessible everywhere you could also
+write something like this</p>
+
+<pre><code>+++[ printf("WUT?"); ptr\[*ptr\] = 65;-]
+&gt;&gt;&gt;.&lt;.&lt;.
+
+=&gt;
+WUT?
+WUT?
+WUT?
+AAA
+</code></pre>
+
+<h3>
+<a id="c-funktions" class="anchor" href="#c-funktions" aria-hidden="true"><span class="octicon octicon-link"></span></a>C Funktions</h3>
+
+<p>Inlining of C functions is a little bit difficult to implement.
+However, if your compiler supports something like the -fnested-functions
+flag, you can just write your function to an arbitrary position in the
+brainfuck source file.</p>
+
+<p>Example:</p>
+
+<pre><code>int foo(){
+    +++[printf("Nothing!\n");-]
+    return 0
+}
+
+++++++[
+    &gt;++++++++++&lt;
+-]
+&gt;+++++.printf("%d"\,*ptr);
+foo();
+</code></pre>
+
+<p><img src="img/wat2.gif" alt="wat"></p>
+
+<h2>
+<a id="todo" class="anchor" href="#todo" aria-hidden="true"><span class="octicon octicon-link"></span></a>TODO</h2>
+
+<p>Inclusion of user defined header files</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Sedfuck maintained by <a href="https://github.com/forflo">forflo</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
