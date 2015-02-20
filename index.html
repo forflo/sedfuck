@@ -35,7 +35,7 @@
 <a id="sedfuck" class="anchor" href="#sedfuck" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sedfuck</h1>
 
 <p>This little sed script translates a given
-brainfuck file to a runnable binary</p>
+brainfuck file into a runnable binary.</p>
 
 <h2>
 <a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dependencies</h2>
@@ -46,9 +46,10 @@ installed on the host platform.</p>
 <h2>
 <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
 
-<p>Just execute a command like the following</p>
+<p>If you downloaded the repository and changed into it, 
+write some nice brainfuck code and execute the following command:</p>
 
-<pre><code>$ sed -n -f sedfuck.sed &lt; somecode.bf &gt; sedfuck.out.c
+<pre><code>$ sed -n -f sedfuck.sed &lt; nicefuck.bf &gt; sedfuck.out.c
 </code></pre>
 
 <p>This will compile the given brainfuck code to C code and uses
@@ -83,7 +84,7 @@ C code will finally be possible.</p>
 <pre><code>+++++[ printf("PENUS!!\+\-\[\]\n"); - ]
 </code></pre>
 
-<p>Will produce</p>
+<p>It'll produce</p>
 
 <pre><code>PENUS!!+-[]
 PENUS!!+-[]
@@ -170,7 +171,7 @@ to prefix them with the "\" char. That's it.</p>
 <pre><code>+++[ printf("WATMAN?! #%d\n"\, *ptr); ]
 </code></pre>
 
-<p>Since the dynamic array ptr is accessible everywhere you could also
+<p>Since the dynamic array "ptr" is accessible everywhere you could also
 write something like this</p>
 
 <pre><code>+++[ printf("WUT?"); ptr\[*ptr\] = 65;-]
@@ -205,10 +206,13 @@ brainfuck source file.</p>
 foo();
 </code></pre>
 
+<h1>
+<a id="conclusion" class="anchor" href="#conclusion" aria-hidden="true"><span class="octicon octicon-link"></span></a>Conclusion</h1>
+
 <p><img src="img/wat2.gif" alt="wat"></p>
 
-<h2>
-<a id="todo" class="anchor" href="#todo" aria-hidden="true"><span class="octicon octicon-link"></span></a>TODO</h2>
+<h1>
+<a id="todo" class="anchor" href="#todo" aria-hidden="true"><span class="octicon octicon-link"></span></a>TODO</h1>
 
 <p>Inclusion of user defined header files</p>
       </section>
